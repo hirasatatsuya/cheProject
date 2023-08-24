@@ -24,4 +24,5 @@ urlpatterns = [
     path('views/',views.index,name='index'),
     path('views/navbar/',views.navbar,name='navbar'),
     path('views/carlist/',views.carlist,name='carlist')
+    path('car/detail', views.detail, name='car_detail')
 ]
