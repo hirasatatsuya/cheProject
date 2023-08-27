@@ -24,5 +24,10 @@ def detail_view(request, id):
     return render(request, "che_project_app/detail.html", context)
 
 
+def info_update(request):
+    """The page for editing user intent"""
+    return render(request, "che_project_app/info_update.html")
+
+
 def index(request):
     return render(request, "che_project_app/index.html")
