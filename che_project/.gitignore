@@ -1,6 +1,2 @@
-*.log
-*.pot
-*.pyc
-*/*/*/__pycache__/
-*/*/__pycache__/
-*/__pycache__/
+che_project/__pycache__/
+che_project_app/__pycache__/
