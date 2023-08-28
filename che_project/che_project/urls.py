@@ -22,4 +22,8 @@ urlpatterns = [
     # Please add below.
     # path("views/", views.index, name="index"),
     path("", include("che_project_app.urls")),
+    path('views/',views.index,name='index'),
+    path('views/navbar/',views.navbar,name='navbar'),
+    path('views/carlist/',views.carlist,name='carlist'),
+    path('car/detail', views.detail, name='car_detail'),
 ]

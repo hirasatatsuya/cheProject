@@ -1,0 +1,28 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+    <section>
+        <div alt="inner">
+            <div>
+                <img src="https://placehold.jp/250x150.png" alt="car img">
+            </div>
+            <div alt="car info">
+                <div>
+                    <h4>Car name：{{ car_name }}</h4>
+                    <h4>Owner name：{{ owner_name }}</h4>
+                    <h4>Price：{{ price }}</h4>
+                    <h4>Rental availibility：{{ rental_avail }}</h4>
+                    <h4>Address：{{ address }}</h4>
+                </div>
+            </div>
+            <div alt="chat btn">
+                <div>
+                    <p>Chat with car owner</p>
+                    <svg class="h-12 w-12 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

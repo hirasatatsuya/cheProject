@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<nav class="bg-orange-400 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="" class="text-white text-3xl font-semibold flex">
+            <svg class="h-12 w-12 pr-2 pb-2 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></svg>
+            <div class"h-12 w-12"> SCAR </div>
+        </a>
+        <a href="">
+            <svg class="h-12 w-12 pb-2 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />  <circle cx="12" cy="7" r="4" /></svg>
+        </a>
+    </div>
+</nav>
+
+<div>
+    <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
