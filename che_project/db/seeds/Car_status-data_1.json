@@ -1,0 +1,38 @@
+[
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "新車"
+        }
+    },
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "新車に近い"
+        }
+    },
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "傷、凹み、悪臭なし"
+        }
+    },
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "やや傷、凹み、臭いあり"
+        }
+    },
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "傷、凹み、臭いあり"
+        }
+    },
+    {
+        "model":"che_project_app.Car_status",
+        "fields": {
+            "status": "ひどい状態"
+        }
+    }
+]
