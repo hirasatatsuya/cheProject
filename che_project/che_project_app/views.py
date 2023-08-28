@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Car, User
+from .models import Car, User, Purpose
 
 # Please add below.
 def car_list(request):
@@ -11,12 +11,23 @@ def car_list(request):
     }
 
     for car in cars:
+        purposes = []
+        pur_value = []
+        pur_value = []
+        for purpose in Purpose.objects.raw("SELECT * FROM che_project_app_purpose WHERE car_id_id = %s", [car.id]):
+            pur_value.append(purpose)
+        purposes.append(pur_value)
         user = User.objects.get(id = car.user_id_id)
-        value = {
+
+        list_entity = {
             "car_name": car.name,
-            "user_name": user.name
+            "car_price": car.price,
+            "lend_start_date": car.lend_start_date,
+            "lend_end_date": car.lend_end_date,
+            "user_name": user.name,
+            "purposes": purposes
         }
-        context["lists"].append(value)
+        context["lists"].append(list_entity)
            
     return render(request, "car_list.html", context)
 
