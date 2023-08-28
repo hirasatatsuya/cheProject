@@ -1,0 +1,56 @@
+[
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "軽自動車"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "コンパクトカー"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "ミニバン"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "ワゴン"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "SUV"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "セダン"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "クーペ"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "オープンカー"
+        }
+    },
+    {
+        "model":"che_project_app.Car_model",
+        "fields": {
+            "model_name": "オフロード"
+        }
+    }
+]
