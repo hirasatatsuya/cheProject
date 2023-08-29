@@ -6,7 +6,20 @@ from .models import Car, User, Car_status, Purpose, Brand, Car_model
 # Please add below.
 def car_list(request):
     """The page for car list"""
-    return render(request, "car_list.html")
+    cars = Car.objects.all()
+    context = {
+        "lists": []
+    }
+
+    for car in cars:
+        user = User.objects.get(id = car.user_id_id)
+        value = {
+            "car_name": car.name,
+            "user_name": user.name
+        }
+        context["lists"].append(value)
+           
+    return render(request, "car_list.html", context)
 
 def chat(request, id):
     """The page for car list"""
