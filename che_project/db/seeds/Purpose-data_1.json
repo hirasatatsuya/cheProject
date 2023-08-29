@@ -206,21 +206,5 @@
             "type": 2,
             "name": "travel"
         }
-    },
-    {
-        "model":"che_project_app.Purpose",
-        "fields": {
-            "car_id": 6,
-            "type": 2,
-            "name": "drive"
-        }
-    },
-    {
-        "model":"che_project_app.Purpose",
-        "fields": {
-            "car_id": 6,
-            "type": 2,
-            "name": "dating"
-        }
     }
 ]
