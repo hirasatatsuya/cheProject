@@ -103,3 +103,22 @@ def car_detail(request, id):
         'model': model,
     }
     return render(request, 'detail.html', context)
+
+def checkout(request, id):
+    car = get_object_or_404(Car, id = id)
+    user = get_object_or_404(User, id = car.user_id_id)
+    model = get_object_or_404(Car_model, id = car.model_name_id)
+    car_status = get_object_or_404(Car_status, id = car.car_status_id)
+    car_brand = get_object_or_404(Brand, id = car.brand_id_id)
+    pur_value = []
+    for purpose in Purpose.objects.raw('SELECT * FROM che_project_app_purpose WHERE car_id_id = %s', [car.id]):
+        pur_value.append(purpose)
+    context = {
+        'car': car,
+        'user': user,
+        'car_status': car_status,
+        'purposes': pur_value,
+        'car_brand': car_brand,
+        'model': model,
+    }
+    return render(request, 'checkout.html', context)
