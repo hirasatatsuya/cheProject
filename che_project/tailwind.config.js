@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./che_project_app/templates/**/*.html",
-    "./node_modules/flowbite/**/*.js",
-  ],
+  content: ["./templates/**/*.html", "./node_modules/flowbite/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        buttonGr: "#068323",
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
