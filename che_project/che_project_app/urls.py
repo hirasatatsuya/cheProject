@@ -12,6 +12,5 @@ urlpatterns = [
     path("detail/car_id=<int:id>/checkout", views.checkout, name="checkout"),
     # path("about/", views.about_view, name="about"),
     path("detail/<int:id>/chat/", views.chat, name="chat"),
-    path("detail/car_id=<int:id>/", views.detail_view, name="detail"),
     path("info/update/", views.info_update, name="info_update"),
 ]
