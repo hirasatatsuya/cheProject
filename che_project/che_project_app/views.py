@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import json
-from .models import Car, User, Car_status, Purpose, Brand, Car_model
+from .models import Car, User, Car_status, Purpose, Brand, Car_model, Car_images
 
 # Please add below.
 def car_list(request):
@@ -12,12 +12,24 @@ def car_list(request):
     }
 
     for car in cars:
+        purposes = []
+        pur_value = []
+        for purpose in Purpose.objects.raw("SELECT * FROM che_project_app_purpose WHERE car_id_id = %s", [car.id]):
+            pur_value.append(purpose)
+        purposes.append(pur_value)
         user = User.objects.get(id = car.user_id_id)
-        value = {
+
+        car_image = Car_images.objects.get(car_id_id = car.id, display_order = 1)
+        list_entity = {
             "car_name": car.name,
-            "user_name": user.name
+            "car_price": car.price,
+            "lend_start_date": car.lend_start_date,
+            "lend_end_date": car.lend_end_date,
+            "user_name": user.name,
+            "purposes": purposes,
+            "car_image": car_image.path,
         }
-        context["lists"].append(value)
+        context["lists"].append(list_entity)
            
     return render(request, "car_list.html", context)
 

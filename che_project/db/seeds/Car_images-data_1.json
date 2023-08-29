@@ -1,0 +1,212 @@
+[
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 1,
+            "path": "../static/src/img/car_images/yaris_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 1,
+            "path": "../static/src/img/car_images/yaris_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 1,
+            "path": "../static/src/img/car_images/yaris_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 2,
+            "path": "../static/src/img/car_images/prius_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 2,
+            "path": "../static/src/img/car_images/prius_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 2,
+            "path": "../static/src/img/car_images/prius_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 3,
+            "path": "../static/src/img/car_images/n-box_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 3,
+            "path": "../static/src/img/car_images/n-box_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 3,
+            "path": "../static/src/img/car_images/n-box_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 3,
+            "path": "../static/src/img/car_images/n-box_interior_3.jpeg",
+            "display_order": 4,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 4,
+            "path": "../static/src/img/car_images/selena_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 4,
+            "path": "../static/src/img/car_images/selena_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 4,
+            "path": "../static/src/img/car_images/selena_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 5,
+            "path": "../static/src/img/car_images/i4_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 5,
+            "path": "../static/src/img/car_images/i4_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 5,
+            "path": "../static/src/img/car_images/i4_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 5,
+            "path": "../static/src/img/car_images/i4_interior_3.jpeg",
+            "display_order": 4,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 6,
+            "path": "../static/src/img/car_images/g-class_exterior_1.jpeg",
+            "display_order": 1,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 6,
+            "path": "../static/src/img/car_images/g-class_interior_1.jpeg",
+            "display_order": 2,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 6,
+            "path": "../static/src/img/car_images/g-class_interior_2.jpeg",
+            "display_order": 3,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    },
+    {
+        "model":"che_project_app.Car_images",
+        "fields": {
+            "car_id": 6,
+            "path": "../static/src/img/car_images/g-class_interior_3.jpeg",
+            "display_order": 4,
+            "created_at": "2023-08-29 12:11:50",
+            "updated_at": null
+        }
+    }
+]
