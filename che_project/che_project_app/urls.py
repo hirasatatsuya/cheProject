@@ -7,6 +7,7 @@ urlpatterns = [
     # car list page
     path("", views.car_list, name="car_list"),
     path("detail/car_id=<int:id>/checkout/", views.checkout, name="checkout"),
+    path("detail/car_id=<int:id>/", views.car_detail, name="detail"),
     # path("about/", views.about_view, name="about"),
     path("detail/<int:id>/chat/", views.chat, name="chat"),
     path("detail/car_id=<int:id>/", views.detail_view, name="detail"),

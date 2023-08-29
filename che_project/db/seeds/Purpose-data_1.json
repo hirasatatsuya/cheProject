@@ -1,0 +1,226 @@
+[
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 1,
+            "name": "normal"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 2,
+            "name": "travel"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 2,
+            "name": "work&school"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 2,
+            "name": "shopping"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 2,
+            "name": "drive"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 1,
+            "type": 2,
+            "name": "dating"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 1,
+            "name": "normal"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 2,
+            "name": "travel"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 2,
+            "name": "work&school"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 2,
+            "name": "shopping"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 2,
+            "name": "drive"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 2,
+            "type": 2,
+            "name": "dating"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 3,
+            "type": 1,
+            "name": "normal"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 3,
+            "type": 2,
+            "name": "work&school"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 3,
+            "type": 2,
+            "name": "shopping"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 3,
+            "type": 2,
+            "name": "delivery"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 4,
+            "type": 1,
+            "name": "normal"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 4,
+            "type": 1,
+            "name": "open"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 4,
+            "type": 2,
+            "name": "travel"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 4,
+            "type": 2,
+            "name": "work&school"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 5,
+            "type": 1,
+            "name": "luxury"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 5,
+            "type": 2,
+            "name": "travel"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 5,
+            "type": 2,
+            "name": "drive"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 5,
+            "type": 2,
+            "name": "dating"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 6,
+            "type": 1,
+            "name": "luxury"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 6,
+            "type": 2,
+            "name": "travel"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 6,
+            "type": 2,
+            "name": "drive"
+        }
+    },
+    {
+        "model":"che_project_app.Purpose",
+        "fields": {
+            "car_id": 6,
+            "type": 2,
+            "name": "dating"
+        }
+    }
+]
