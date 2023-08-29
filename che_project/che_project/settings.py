@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         "NAME": "scar_db",
         'USER': 'postgres',
-        'PASSWORD': 'Son11223344',
+        'PASSWORD': '12345',
         'HOST': 'localhost',
         'PORT': '5432',
     }
