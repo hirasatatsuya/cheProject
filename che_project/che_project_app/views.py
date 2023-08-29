@@ -61,7 +61,6 @@ def car_detail(request, id):
     model = get_object_or_404(Car_model, id = car.model_name_id)
     car_status = get_object_or_404(Car_status, id = car.car_status_id)
     car_brand = get_object_or_404(Brand, id = car.brand_id_id)
-    # purposes = Purpose.objects.filter(car_id_id = id).values()
     pur_value = []
     for purpose in Purpose.objects.raw('SELECT * FROM che_project_app_purpose WHERE car_id_id = %s', [car.id]):
         pur_value.append(purpose)
