@@ -2,6 +2,7 @@
 cheProject_venv/
 node_modules/
 package-lock.json
+/CACHE/css/*.css
 # Ignore compiled Python files
 __pycache__/
 *.pyc
