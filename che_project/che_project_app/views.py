@@ -1,16 +1,23 @@
+from datetime import date, datetime, time, timedelta, timezone
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-import json
+from django.views.decorators.csrf import csrf_protect
+from pytz import timezone
 from .models import Car, User, Car_status, Purpose, Brand, Car_model, Car_images
 
 # Please add below.
+@csrf_protect
 def car_list(request):
-    """The page for car list"""
-    cars = Car.objects.all()
+    refinement_element = {
+        "rent_date": request.POST.get("rent_date"),
+    }
+
+    cars = Car.objects.all()    
     context = {
         "lists": []
     }
 
+    # 車の情報取得処理
     for car in cars:
         purposes = []
         pur_value = []
@@ -29,9 +36,17 @@ def car_list(request):
             "purposes": purposes,
             "car_image": car_image.path,
         }
-        context["lists"].append(list_entity)
-           
-    return render(request, "car_list.html", context)
+
+        if request.POST.get("rent_date"): # 日付絞り込み
+            ref_start_date = datetime.strptime(refinement_element["rent_date"], '%Y-%m-%d')
+            ref_str_date = timezone("UTC").localize(ref_start_date)
+            
+            if list_entity["lend_start_date"] < ref_str_date and list_entity["lend_end_date"] > ref_str_date:
+                context["lists"].append(list_entity)
+        else:
+            context["lists"].append(list_entity)
+    
+    return render(request, "car_list.html", {"lists": context["lists"], "refinement_element": refinement_element})
 
 
 def chat(request, id):
