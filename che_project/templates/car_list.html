@@ -1,5 +1,6 @@
 {% extends "_base.html" %} {% block content %}
 
+
 <div class="flex items-center">
   <div class="relative max-w-sm w-fit mt-6 mb-3">
     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -13,8 +14,9 @@
 <button id="Search" class="mt-2 mr-2 p-2 text-sm h-fit bg-blue-500 text-white rounded-lg cursor-pointer">Search</button>
 <button id="resetButton" class="mt-2 p-2 text-sm h-fit bg-blue-500 text-white rounded-lg cursor-pointer">Reset Date</button>
 
+
 {% for obj in lists %}
-<a href="#!">
+<a href="detail/car_id={{obj.car_id}}">
   <div class="my-6 max-w-screen-md mx-auto p-4 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 font-sans hover:shadow-lg">
     <div class="flex">
       <img

@@ -12,8 +12,8 @@ urlpatterns = [
     path("detail/<int:id>/chat/", views.chat, name="chat"),
     # Checkout page
     path("detail/car_id=<int:id>/checkout/", views.checkout, name="checkout"),
-    # Success page
-    path("detail/car_id=<int:id>/success/", views.success_page, name="success_page"),
     # Info update page
     path("info/update/", views.info_update, name="info_update"),
+    # booking car page success
+    path("booking-success/car_id=<int:id>/", views.car_avail_update, name="success"),
 ]
