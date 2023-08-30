@@ -1,4 +1,16 @@
-che_project/__pycache__/
-che_project_app/__pycache__/
+
 cheProject_venv/
 node_modules/
+package-lock.json
+/CACHE/css/*.css
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore backup files
+*.bak
+
+# Ignore compiled executables
+*.exe
+*.out
