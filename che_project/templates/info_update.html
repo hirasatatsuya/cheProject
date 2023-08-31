@@ -270,11 +270,44 @@
     });
   }
 
+  // Function to load checkbox values to Localstorage
+  function updateLocalStorage(key, checkboxes) {
+    const selectedValues = Array.from(checkboxes)
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => checkbox.nextElementSibling.textContent.trim());
+    localStorage.setItem(key, JSON.stringify(selectedValues));
+  }
+
+  // Function to load checkbox values from Local Storage
+  function loadFromLocalStorage(key, checkboxes) {
+    const storedValues = localStorage.getItem(key);
+    if (storedValues) {
+      const selectedValues = JSON.parse(storedValues);
+      checkboxes.forEach((checkbox) => {
+        const label = checkbox.nextElementSibling.textContent.trim();
+        checkbox.checked = selectedValues.includes(label);
+      });
+    }
+  }
+
   const form = document.getElementById("formId");
   const alert = document.getElementById("alert");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     alert.classList.remove("hidden");
   });
+
+  submitButton.addEventListener("click", () => {
+    updateLocalStorage("selectedCheckboxes", checkboxes);
+  });
+
+  // Add event listener to the submit button in the second modal
+  otherSubmitButton.addEventListener("click", () => {
+    updateLocalStorage("otherSelectedCheckboxes", otherCheckboxes);
+  });
+
+  // Load checkbox values from Local Storage on page load
+  loadFromLocalStorage("selectedCheckboxes", checkboxes);
+  loadFromLocalStorage("otherSelectedCheckboxes", otherCheckboxes);
 </script>
 {% endblock content %}
