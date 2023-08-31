@@ -10,7 +10,7 @@ from .models import Car, User, Car_status, Purpose, Brand, Car_model, Car_images
 @csrf_protect
 def car_list(request):
     refinement_element = {
-        "rent_date": request.POST.get("rent_date"),
+        "rent_date": request.POST.get("return_car_rent_date"),
     }
 
     cars = Car.objects.all()    
@@ -22,6 +22,7 @@ def car_list(request):
     for car in cars:
         purposes = []
         pur_value = []
+        purpose_count = 0
         for purpose in Purpose.objects.raw(
             "SELECT * FROM che_project_app_purpose WHERE car_id_id = %s", [car.id]
         ):
@@ -39,17 +40,31 @@ def car_list(request):
             "user_name": user.name,
             "purposes": purposes,
             "car_image": car_image.path,
+            "purpose_count": purpose_count,
         }
 
-        if request.POST.get("rent_date"): # 日付絞り込み
+        # マッチングアルゴリズム
+        if request.POST.get("return_car_list"):
+            filter_purpose = request.POST.get("return_car_list")
+        else:
+            filter_purpose = []
+        if len(filter_purpose) != 0:
+            for elm in list_entity["purposes"]:
+                for a in elm:
+                    if a.name in filter_purpose:
+                        purpose_count += 1
+                        print("{} purpose count {}".format(car.name, purpose_count))
+        
+        # ToDo
+        #何もチェックされていないとき全て出るように実装
+        if request.POST.get("return_car_rent_date"): # 日付絞り込みあり
             ref_start_date = datetime.strptime(refinement_element["rent_date"], '%Y-%m-%d')
             ref_str_date = timezone("UTC").localize(ref_start_date)
             
             if list_entity["lend_start_date"] < ref_str_date and list_entity["lend_end_date"] > ref_str_date:
-                context["lists"].append(list_entity)
-        else:
-            context["lists"].append(list_entity)
-    
+                if purpose_count > 0: # タグマッチングあり
+                    context["lists"].append(list_entity)
+
     return render(request, "car_list.html", {"lists": context["lists"], "refinement_element": refinement_element})
 
 
@@ -68,10 +83,26 @@ def detail_view(request, id):
     }
     return render(request, "detail.html", context)
 
-
+@csrf_protect
 def info_update(request):
     """The page for editing user intent"""
-    return render(request, "info_update.html")
+    if request.POST.get("rent_date"):
+        rent_date = request.POST.get("rent_date")
+    else:
+        rent_date = "2023-08-31"
+    user_id = 7
+    user = User.objects.get(id = user_id)
+    context = {
+        "user_id": user_id,
+        "name": user.name,
+        "tel_phone": user.phone_number,
+        "location": user.address,
+        "email": user.email,
+    }
+
+    purpose = request.POST.getlist("what_car") + request.POST.getlist("what_purpose")
+
+    return render(request, "info_update.html", {"context": context, "purpose": purpose, "rent_date": rent_date})
 
 
 def checkout(request, id):
@@ -80,29 +111,6 @@ def checkout(request, id):
         "id": id,
     }
     return render(request, "checkout.html")
-
-
-def index(request):
-    return HttpResponse("Hello World")
-
-
-def navbar(request):
-    return render(request, "navbar.html")
-
-
-def carlist(request):
-    return render(request, "carlist.html")
-
-
-def detail(request):
-    context = {
-        "car_name": "うんち",
-        "owner_name": "うんちマン",
-        "price": 900,
-        "rental_avail": True,
-        "address": "埼玉県所沢市",
-    }
-    return render(request, "car_detail.html", context)
 
 
 def car_detail(request, id):
