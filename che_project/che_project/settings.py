@@ -85,9 +85,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "scar_db",
         "USER": "postgres",
-        "PASSWORD": "12345",
+        "PASSWORD": "password",
         "HOST": "localhost",
-        "PORT": "5432",
+        "PORT": "5433",
     }
 }
 
@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "ja"
 
-TIME_ZONE = "Asia/Ho_Chi_Minh"
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 
