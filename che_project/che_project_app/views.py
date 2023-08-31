@@ -100,7 +100,17 @@ def info_update(request):
         "email": user.email,
     }
 
-    purpose = request.POST.getlist("what_car") + request.POST.getlist("what_purpose")
+    if request.POST.getlist("what_car"):
+        what_car = request.POST.getlist("what_car")
+    else:
+        what_car = []
+
+    if  request.POST.getlist("what_purpose"):
+        what_purpose = request.POST.getlist("what_purpose")
+    else:
+        what_purpose =  []
+
+    purpose = what_car + what_purpose
 
     return render(request, "info_update.html", {"context": context, "purpose": purpose, "rent_date": rent_date})
 
