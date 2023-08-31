@@ -2,14 +2,11 @@
 
 <form id="formId" class="max-w-screen-md mx-auto pt-6">
   <div class="grid gap-6 mb-6 md:grid-cols-2">
-    <div>
-      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+    <div class="col-span-2">
+      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
       <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
     </div>
-    <div>
-      <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
-      <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
-    </div>
+
     <div>
       <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
       <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" required />
@@ -195,8 +192,21 @@
     </div>
     <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4972d4e9b7ea2bbeed7e3b11f266df9085ed88c9
   <button type="submit" id="submitAllBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
 </form>
+<button type="submit" id="submitAllBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 my-6 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Go To Car list</button>
+
+<div class="mt-4 flex items-center hidden p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" id="alert" role="alert">
+  <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+  </svg>
+  <span class="sr-only">Info</span>
+  <div><span class="font-medium">Success alert!</span> You have updated info successfully.</div>
+</div>
 
 <div class="mt-4 flex items-center hidden p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" id="alert" role="alert">
   <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -226,7 +236,7 @@
         const label = checkbox.nextElementSibling.textContent;
         const listItem = document.createElement("li");
         listItem.textContent = label;
-        listItem.classList.add("text-black", "bg-transparent", "border-2", "border-gray-400", "hover:bg-gray-200", "font-medium", "rounded-full", "text-sm", "w-full", "sm:w-auto", "px-4", "py-0.5", "shadow", "text-center", "mb-1", "inline-block", "mt-2", "mr-1");
+        listItem.classList.add("text-black", "bg-transparent", "border-2", "border-gray-400", "hover:bg-gray-200", "font-medium", "rounded-full", "text-sm", "w-full", "sm:w-auto", "px-4", "py-0.5", "shadow", "text-center", "mb-3", "inline-block", "mt-1", "mr-1");
         selectedList.appendChild(listItem);
       }
     });

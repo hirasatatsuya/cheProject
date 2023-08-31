@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from pytz import timezone
+import json
 from .models import Car, User, Car_status, Purpose, Brand, Car_model, Car_images
 
 # Please add below.
@@ -30,6 +31,7 @@ def car_list(request):
 
         car_image = Car_images.objects.get(car_id_id=car.id, display_order=1)
         list_entity = {
+            "car_id": car.id,
             "car_name": car.name,
             "car_price": car.price,
             "lend_start_date": car.lend_start_date,
@@ -104,52 +106,56 @@ def detail(request):
 
 
 def car_detail(request, id):
-    car = get_object_or_404(Car, id=id)
-    user = get_object_or_404(User, id=car.user_id_id)
-    model = get_object_or_404(Car_model, id=car.model_name_id)
-    car_status = get_object_or_404(Car_status, id=car.car_status_id)
-    car_brand = get_object_or_404(Brand, id=car.brand_id_id)
+    car = get_object_or_404(Car, id = id)
+    user = get_object_or_404(User, id = car.user_id_id)
+    car_images = Car_images.objects.filter(car_id_id = car.id)
+    model = get_object_or_404(Car_model, id = car.model_name_id)
+    car_status = get_object_or_404(Car_status, id = car.car_status_id)
+    car_brand = get_object_or_404(Brand, id = car.brand_id_id)
     pur_value = []
     for purpose in Purpose.objects.raw(
         "SELECT * FROM che_project_app_purpose WHERE car_id_id = %s", [car.id]
     ):
         pur_value.append(purpose)
     context = {
-        "car": car,
-        "user": user,
-        "car_status": car_status,
-        "purposes": pur_value,
-        "car_brand": car_brand,
-        "model": model,
+        'car': car,
+        'car_images': car_images,
+        'user': user,
+        'car_status': car_status,
+        'purposes': pur_value,
+        'car_brand': car_brand,
+        'model': model,
     }
     return render(request, "detail.html", context)
 
 
 def checkout(request, id):
-    car = get_object_or_404(Car, id=id)
-    user = get_object_or_404(User, id=car.user_id_id)
-    model = get_object_or_404(Car_model, id=car.model_name_id)
-    car_status = get_object_or_404(Car_status, id=car.car_status_id)
-    car_brand = get_object_or_404(Brand, id=car.brand_id_id)
+    car = get_object_or_404(Car, id = id)
+    user = get_object_or_404(User, id = car.user_id_id)
+    model = get_object_or_404(Car_model, id = car.model_name_id)
+    car_image_first = Car_images.objects.get(car_id_id = car.id, display_order = 1)
+    car_status = get_object_or_404(Car_status, id = car.car_status_id)
+    car_brand = get_object_or_404(Brand, id = car.brand_id_id)
     pur_value = []
     for purpose in Purpose.objects.raw(
         "SELECT * FROM che_project_app_purpose WHERE car_id_id = %s", [car.id]
     ):
         pur_value.append(purpose)
     context = {
-        "car": car,
-        "user": user,
-        "car_status": car_status,
-        "purposes": pur_value,
-        "car_brand": car_brand,
-        "model": model,
+        'car': car,
+        'car_image_first': car_image_first,
+        'user': user,
+        'car_status': car_status,
+        'purposes': pur_value,
+        'car_brand': car_brand,
+        'model': model,
     }
-    return render(request, "checkout.html", context)
+    return render(request, 'checkout.html', context)
 
-
-def success_page(request, id):
-    """This page show that customers ordered successfully"""
-    context = {
-        "id": id,
-    }
-    return render(request, "success_page.html")
+def car_avail_update(request, id):
+    car = get_object_or_404(Car, id = id)
+    if car.rental_available == True:
+        car.rental_available = False
+        car.updated_at = datetime.now()
+    car.save()
+    return render(request, 'success_page.html')
